@@ -1,6 +1,7 @@
 // src/components/AdvogadoList.tsx
 import React from 'react';
 import { Advogado } from '../types/Types';  
+import { getSeniorityLabel } from '../types/Seniority';
 
 interface AdvogadoListProps {
     advogados: Advogado[];
@@ -9,13 +10,14 @@ interface AdvogadoListProps {
 }
 
 const AdvogadoList: React.FC<AdvogadoListProps> = ({ advogados, handleEdit, handleDelete }) => {
+    console.log(advogados.map(x => x))
     return (
         <ul>
             {advogados.map((advogado) => (
-                <li key={advogado.id}>
-                    {advogado.nome} - {advogado.senioridade}
+                <li key={advogado.Id}>
+                     {advogado.Nome} - {getSeniorityLabel(Number(advogado.Senioridade))}
                     <button onClick={() => handleEdit(advogado)}>Editar</button>
-                    <button onClick={() => handleDelete(advogado.id)}>Excluir</button>
+                    <button onClick={() => handleDelete(advogado.Id)}>Excluir</button>
                 </li>
             ))}
         </ul>

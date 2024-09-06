@@ -15,26 +15,26 @@ const App: React.FC = () => {
   }, []);
 
   const fetchAdvogados = async () => {
-    const response = await axios.get('/api/advogados');
+    const response = await axios.get('http://localhost:9000/api/advogados');
     setAdvogados(response.data);
   };
 
   const handleFormSubmit = async (data: AdvogadoFormData) => {
     if (editingId !== null) {
-      await axios.put(`/api/advogados/${editingId}`, { ...data, id: editingId });
+      await axios.put(`http://localhost:9000/api/advogados/${editingId}`, { ...data, Id: editingId });
     } else {
-      await axios.post('/api/advogados', data);
+      await axios.post('http://localhost:9000/api/advogados', data);
     }
     fetchAdvogados();
     setEditingId(null);
   };
 
   const handleEdit = (advogado: Advogado) => {
-    setEditingId(advogado.id || null);
+    setEditingId(advogado.Id || null);
   };
 
   const handleDelete = async (id: number) => {
-    await axios.delete(`/api/advogados/${id}`);
+    await axios.delete(`http://localhost:9000/api/advogados/${id}`);
     fetchAdvogados();
   };
 

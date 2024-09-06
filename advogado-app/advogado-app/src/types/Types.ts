@@ -1,14 +1,14 @@
 export interface Advogado {
-    id: number;
-    nome: string;
-    senioridade: string;
-    logradouro: string;
-    bairro: string;
-    estado: string;
-    cep: string;
-    numero: string;
+    Id: number;
+    Nome: string;
+    Senioridade: string;
+    Logradouro: string;
+    Bairro: string;
+    Estado: string;
+    Cep: string;
+    Numero: string;
 }
     
 
-export type AdvogadoFormData = Omit<Advogado, 'id'>;
+export type AdvogadoFormData = Omit<Advogado, 'Id'>;
     
