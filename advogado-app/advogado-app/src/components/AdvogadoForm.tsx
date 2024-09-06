@@ -62,7 +62,7 @@ const AdvogadoForm: React.FC<AdvogadoFormProps> = ({ onSubmit, editingId, setEdi
     } catch (error) {
       console.error("Erro ao cadastrar advogado:", error);
     }finally {
-        setLoading(false); // Garantir que o carregamento é desativado
+        setLoading(false);
     }
   };
 

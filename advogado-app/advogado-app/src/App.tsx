@@ -4,7 +4,7 @@ import axios from 'axios';
 import AdvogadoForm from './components/AdvogadoForm';
 import AdvogadoList from './components/AdvogadoList';
 import './styles/App.css';
-import { Advogado, AdvogadoFormData } from '../src/types/Types';  // Importar os tipos Advogado e AdvogadoFormData
+import { Advogado, AdvogadoFormData } from '../src/types/Types';  
 
 const App: React.FC = () => {
   const [advogados, setAdvogados] = useState<Advogado[]>([]);

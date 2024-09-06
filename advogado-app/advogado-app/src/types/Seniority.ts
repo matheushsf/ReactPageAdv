@@ -13,6 +13,6 @@ export const getSeniorityLabel = (seniority: number): string => {
       case Seniority.Senior:
         return 'Senior';
       default:
-        return 'Desconhecido'; // Retorne um valor padrão se não encontrar correspondência
+        return 'Desconhecido'; 
     }
   };
